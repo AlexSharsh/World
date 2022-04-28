@@ -11,8 +11,8 @@ public class Ragdoll : MonoBehaviour
     public float killForce = 5f;
 
     private Animator anim;
-    private ThirdPersonUserControl controller;
-    private CharacterController characterController;
+    //private ThirdPersonUserControl controller;
+    //private CharacterController characterController;
 
     // Start is called before the first frame update
     void Start()
@@ -21,8 +21,8 @@ public class Ragdoll : MonoBehaviour
         Rbs = GetComponentsInChildren<Rigidbody>();
         Colls = GetComponentsInChildren<Collider>();
 
-        controller = GetComponent<ThirdPersonUserControl>();
-        characterController = GetComponent<CharacterController>();
+        //controller = GetComponent<ThirdPersonUserControl>();
+        //characterController = GetComponent<CharacterController>();
 
         Revive();
     }
@@ -59,8 +59,8 @@ public class Ragdoll : MonoBehaviour
     void SetMain(bool active)
     {
         anim.enabled = active;
-        characterController.enabled = active;
-        controller.enabled = active;
+        //characterController.enabled = active;
+        //controller.enabled = active;
         Rbs[0].isKinematic = !active;
         Colls[0].enabled = active;
     }
